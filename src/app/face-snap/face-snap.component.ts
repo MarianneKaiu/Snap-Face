@@ -11,6 +11,7 @@ export class FaceSnapComponent {
   createdDate!: Date;
   snaps!: number;
   imageUrl!: string;
+  buttonText!: string;
 
   ngOnInit() {
     this.title = 'Matcho';
@@ -19,5 +20,15 @@ export class FaceSnapComponent {
     this.snaps = 6;
     this.imageUrl =
       'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
+    this.buttonText = 'Oh snap !';
+  }
+  onSnap() {
+    if (this.buttonText === 'Oh snap !') {
+      this.snaps++;
+      this.buttonText = 'Oops unSnap !';
+    } else if (this.buttonText === 'Oops unSnap !') {
+      this.snaps--;
+      this.buttonText = 'Oh snap !';
+    }
   }
 }
